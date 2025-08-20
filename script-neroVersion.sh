@@ -99,6 +99,35 @@ echo "[✅]  [VirtualBox]"
 echo "[✅]  [Obsidian]"
 clear
 
+echo "This part is gonna clone all the 42 repositories for all the project already done"
+mkdir -p ~/42/Common-Core
+git clone git@github.com:IAnero/libft.git ~/42/Common-Core
+echo "[✅] [libft]"
+clear
+git clone git@github.com:IAnero/ft_printf.git ~/42/Common-Core
+echo "[✅] [ft_printf]"
+clear
+git clone git@github.com:IAnero/get_next_line.git ~/42/Common-Core
+echo "[✅] [get_next_line]"
+clear
+git clone git@github.com:IAnero/minitalk.git ~/42/Common-Core
+echo "[✅] [minitalk]"
+clear
+git clone git@github.com:IAnero/fdf.git ~/42/Common-Core
+echo "[✅] [fdf]"
+clear
+git clone git@github.com:IAnero/push_swap.git ~/42/Common-Core
+echo "[✅] [push_swap]"
+clear
+git clone git@github.com:IAnero/philosophers.git ~/42/Common-Core
+echo [✅] [philosophers]"
+clear
+git clone git@github.com:IAnero/minishell.git ~/42/Common-Core
+echo "[✅] [minishell]"
+clear
+git clone git@github.com:IAnero/CPP.git ~/42/Common-Core
+echo "[✅] [CPP]"
+clear
 echo "[ ]checking for [wallpaper]"
 echo "[ ]checking for [setup_file]"
 echo "[ ]checking for [gnome_term]"
