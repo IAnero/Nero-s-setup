@@ -101,33 +101,34 @@ clear
 
 echo "This part is gonna clone all the 42 repositories for all the project already done"
 mkdir -p ~/42/Common-Core
-git clone git@github.com:IAnero/libft.git ~/42/Common-Core
+git clone git@github.com:IAnero/libft.git ~/42/Common-Core/libft
 echo "[✅] [libft]"
 clear
-git clone git@github.com:IAnero/ft_printf.git ~/42/Common-Core
+git clone git@github.com:IAnero/ft_printf.git ~/42/Common-Core/ft_printf
 echo "[✅] [ft_printf]"
 clear
-git clone git@github.com:IAnero/get_next_line.git ~/42/Common-Core
+git clone git@github.com:IAnero/get_next_line.git ~/42/Common-Core/get_next_line
 echo "[✅] [get_next_line]"
 clear
-git clone git@github.com:IAnero/minitalk.git ~/42/Common-Core
+git clone git@github.com:IAnero/minitalk.git ~/42/Common-Core/minitalk
 echo "[✅] [minitalk]"
 clear
-git clone git@github.com:IAnero/fdf.git ~/42/Common-Core
+git clone git@github.com:IAnero/fdf.git ~/42/Common-Core/fdf
 echo "[✅] [fdf]"
 clear
-git clone git@github.com:IAnero/push_swap.git ~/42/Common-Core
+git clone git@github.com:IAnero/push_swap.git ~/42/Common-Core/push_swap
 echo "[✅] [push_swap]"
 clear
-git clone git@github.com:IAnero/philosophers.git ~/42/Common-Core
-echo [✅] [philosophers]"
+git clone git@github.com:IAnero/philosophers.git ~/42/Common-Core/philosophers
+echo "[✅] [philosophers]"
 clear
-git clone git@github.com:IAnero/minishell.git ~/42/Common-Core
+git clone git@github.com:IAnero/minishell.git ~/42/Common-Core/minishell
 echo "[✅] [minishell]"
 clear
-git clone git@github.com:IAnero/CPP.git ~/42/Common-Core
+git clone git@github.com:IAnero/CPP.git ~/42/Common-Core/CPP
 echo "[✅] [CPP]"
 clear
+
 echo "[ ]checking for [wallpaper]"
 echo "[ ]checking for [setup_file]"
 echo "[ ]checking for [gnome_term]"
