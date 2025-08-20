@@ -1,12 +1,111 @@
 #!/bin/bash
+
+# For local own PC uncomment the paragraph below
+#For 42 PC comment this paragraph if uncommented
+echo "this part of the script is supposed to install every dependency for the dev environment"
+echo "It will take a bit of time, relax and wait"
 clear
+sudo apt update && sudo apt upgrade -y && sudo apt install -y \
+    git \
+    curl \
+    wget \
+    python3-pip \
+    build-essential \
+    gcc \
+    g++ \
+    make \
+    cmake \
+    gdb \
+    valgrind \
+    clang \
+    clang-format \
+    libx11-dev \
+    libxext-dev \
+    libxrandr-dev \
+    libxinerama-dev \
+    libxcursor-dev \
+    libxi-dev \
+    xorg \
+    libgl1-mesa-dev \
+    libglu1-mesa-dev
+clear
+echo "Installation successful of : git, curl, wget, python3-pip, build-essential, gcc, g++, make, cmake,
+gdb, valgrind, clang, clang-format, libx11-dev, libxext-dev, libxrandr-dev, libxinerama-dev, libxcursor-dev,
+libxi-dev, xorg, libgl1-mesa-dev and libglu1-mesa-dev"
+clear
+echo "This part cover the installation of the apps that are needed for the dev environment"
+echo "It will take a bit of time, relax and wait, yes again"
+clear
+# Update and upgrade first
+sudo apt update && sudo apt upgrade -y
+clear
+# Install prerequisite tools
+sudo apt install -y wget gpg apt-transport-https software-properties-common
+clear
+
+# Install VS Code
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'
+rm -f packages.microsoft.gpg
+sudo apt update
+sudo apt install -y code
+echo "[✅] [Vscode]"
+echo "[ ]  [Google Chrome]"
+echo "[ ]  [Discord]"
+echo "[ ]  [VirtualBox]"
+echo "[ ]  [Obsidian]"
+clear
+
+# Install Google Chrome
+wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
+rm -f google-chrome-stable_current_amd64.deb
+echo "[✅] [Vscode]"
+echo "[✅]  [Google Chrome]"
+echo "[ ]  [Discord]"
+echo "[ ]  [VirtualBox]"
+echo "[ ]  [Obsidian]"
+clear
+
+# Install Discord
+wget -q https://discord.com/api/download?platform=linux&format=deb -O discord.deb
+sudo apt install -y ./discord.deb
+rm -f discord.deb
+echo "[✅] [Vscode]"
+echo "[✅]  [Google Chrome]"
+echo "[✅]  [Discord]"
+echo "[ ]  [VirtualBox]"
+echo "[ ]  [Obsidian]"
+clear
+
+# Install VirtualBox
+sudo apt install -y virtualbox virtualbox-ext-pack
+echo "[✅] [Vscode]"
+echo "[✅]  [Google Chrome]"
+echo "[✅]  [Discord]"
+echo "[✅]  [VirtualBox]"
+echo "[ ]  [Obsidian]"
+clear
+
+# Install Obsidian
+wget -q https://github.com/obsidianmd/obsidian-releases/releases/download/v1.1.25/Obsidian-1.1.25.deb -O obsidian.deb
+sudo apt install -y ./obsidian.deb
+rm -f obsidian.deb
+echo "[✅] [Vscode]"
+echo "[✅]  [Google Chrome]"
+echo "[✅]  [Discord]"
+echo "[✅]  [VirtualBox]"
+echo "[✅]  [Obsidian]"
+clear
+
 echo "[ ]checking for [wallpaper]"
 echo "[ ]checking for [setup_file]"
 echo "[ ]checking for [gnome_term]"
 echo "[ ]checking for [oh my zsh]"
 rm -rf ~/Pictures/wallpaper
+rm -rf ~/Pictures/wallpap
 git clone git@github.com:IAnero/Wallpaper.git ~/Pictures/wallpap
-clear
 echo "[✅]ok: [wallpaper]"
 echo "[ ]checking for [setup_file]"
 echo "[ ]checking for [gnome_term]"
@@ -23,22 +122,21 @@ mv ~/setup_file/doticons/WhiteSur-Dark ~/.icons
 echo "_icons OK"
 rm ~/.zshrc
 ln -s ~/setup_dep/.zshrc ~/.zshrc
-clear
 echo "[✅]ok: [wallpaper]"
 echo "[✅]ok: [setup_file]"
 echo "[ ]checking for [gnome_term]"
 echo "[ ]checking for [oh my zsh]"
-curl -L https://raw.githubusercontent.com/nordtheme/gnome-terminal/src/nord.sh | python3 -
-clear
+curl -fsSL https://raw.githubusercontent.com/nordtheme/gnome-terminal/develop/src/nord.sh | bash
+echo "_gnome-terminal OK"
 echo "[✅]ok: [wallpaper]"
 echo "[✅]ok: [setup_file]"
 echo "[✅]ok: [gnome-term]"
 echo "[ ]checking for [oh my zsh]"
-uninstall_oh_my_zsh
+sh ~/.oh-my-zsh/tools/uninstall.sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+rm -rf ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 echo "_zsh-autosuggestions OK"
-clear
 echo "[✅]ok: [wallpaper]"
 echo "[✅]ok: [setup_file]"
 echo "[✅]ok: [gnome-term]"
