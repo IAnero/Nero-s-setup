@@ -160,6 +160,7 @@ rm ~/.zshrc
 rm ~/.wezterm.lua
 ln -s ~/setup_dep/.zshrc ~/.zshrc
 ln -s ~/setup_dep/.wezterm.lua ~/.wezterm.lua
+gnome-extensions install --force ~/setup_file/blur-my-shellaunetx.v47.shell-extension.zip
 echo "[✅]ok: [wallpaper]"
 echo "[✅]ok: [setup_file]"
 echo "[✅]ok: [Wezterm]"
