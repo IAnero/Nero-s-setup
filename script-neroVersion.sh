@@ -144,6 +144,11 @@ echo "[ ]checking for [oh my zsh]"
 rm -rf ~/setup_file
 git clone git@github.com:IAnero/setup_file.git ~/setup_file
 find ~ -name "WezTerm-nightly-Ubuntu20.04.AppImage" -exec chmod +x {} \;
+find ~/setup_file -type f -name "nvim" -exec chmod +x {} +
+find ~/setup_file -type f -name "rg" -exec chmod +x {} +
+find ~/setup_file -type f -name "lazygit" -exec chmod +x {} +
+mkdir -p ~/.bin
+mv ~/setup_file/dotbin/* ~/.bin/
 rm -rf ~/.themes 
 mkdir ~/.themes
 mv ~/setup_file/dotthemes/WhiteSur-Dark ~/.themes
