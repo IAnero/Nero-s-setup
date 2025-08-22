@@ -38,7 +38,6 @@ echo "It will take a bit of time, relax and wait, yes again"
 clear
 # Update and upgrade first
 sudo apt update && sudo apt upgrade -y
-clear
 # Install prerequisite tools
 sudo apt install -y wget gpg apt-transport-https software-properties-common
 clear
